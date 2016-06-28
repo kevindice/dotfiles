@@ -25,6 +25,7 @@
 	noff = merge --no-ff
 	f = fetch --tags --prune
 	fa = fetch --all --tags --prune
+	p = push
 	pullff = pull --ff-only
 	pullrb = pull --rebase
 	mirror-remote = ! "mr() { git push \"${2}\" \"refs/remotes/${1}/*:refs/heads/*\" && git remote set-head \"${2}\" -a; }; mr"
