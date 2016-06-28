@@ -66,3 +66,10 @@ fi
 }
 
 install_zsh
+
+
+# Reset font cache on Linux
+if command -v fc-cache @>/dev/null ; then
+    echo "Resetting font cache, this may take a moment..."
+    fc-cache -f $font_dir
+fi
