@@ -87,4 +87,4 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias tk="take"
-alias dot="find .* -maxdepth 0 | less"
+alias dot="find ~/.* -maxdepth 0 | less"
