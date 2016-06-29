@@ -8,10 +8,18 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-excludefiles="install.sh"         # list of files/folders to exclude
-files=`find ~/dotfiles -maxdepth 1 -printf "%f\n" | grep -v "^\." | grep -v $excludefiles`
+files=`find ~/dotfiles -maxdepth 1 -printf "%f\n" | grep -v "^\."`
 
 ##########
+
+# diff gitconfig and clobber existing (ignored) with default (under SCM)
+# This is necessary because gas operates by modifying the gitconfig
+# file and I want to not see changes in my dotfile repo evey time I
+# switch to a different git identity.  Gas is hellbent on modifying
+# ~/.gitconfig and this cannot be configured, so this is my
+# semi-shitty workaround that will "just work"
+diff $dir/gitconfig $dir/_gitconfig
+cp -f $dir/_gitconfig $dir/gitconfig
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
