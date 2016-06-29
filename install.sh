@@ -8,8 +8,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-excludefiles="install.sh"    # list of files/folders to symlink in homedir
-files=`find ~/dotfiles -maxdepth 1 -printf "%f\n" | grep -v $excludefiles`
+excludefiles="install.sh"         # list of files/folders to exclude
+files=`find ~/dotfiles -maxdepth 1 -printf "%f\n" | grep -v "^\." | grep -v $excludefiles`
 
 ##########
 
