@@ -86,5 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+source ~/.ssh-aliases
 alias tk="take"
 alias dot="find ~/.* -maxdepth 0 | less"
+
