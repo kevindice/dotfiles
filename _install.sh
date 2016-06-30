@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=`find ~/dotfiles -maxdepth 1 -printf "%f\n" | grep -v "^\."`
+files=`ls ~/dotfiles -a | grep -v "^\." | grep -v "^_"`
 
 ##########
 
