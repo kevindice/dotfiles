@@ -30,6 +30,9 @@
 
 CURRENT_BG='NONE'
 
+ZSH_HOST=`hostname`
+
+
 # Special Powerline characters
 
 () {
@@ -80,7 +83,17 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
+    if [[ "$ZSH_HOST" == "cougar" ]]; then
+      prompt_segment yellow black "%(!.%{%F{yellow}%}.)$USER@%m"
+    elif [[ "$ZSH_HOST" == "viper" ]]; then
+      prompt_segment green black "%(!.%{%F{yellow}%}.)$USER@%m"
+    elif [[ "$ZSH_HOST" == "ubuntu" ]]; then
+      prompt_segment orange default "%(!.%{%F{yellow}%}.)$USER@%m"
+    elif [[ "$ZSH_HOST" == "KSUHackathon" ]]; then
+      prompt_segment purple white "%(!.%{%F{yellow}%}.)$USER@%m"
+    else
+      prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
+    fi
   fi
 }
 
