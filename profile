@@ -28,3 +28,7 @@ fi
 
 wget https://i.redd.it/5bznn9h4426x.jpg -O ~/dotfiles/.images/background.jpg --quiet
 nitrogen --set-scaled ~/dotfiles/.images/background.jpg
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

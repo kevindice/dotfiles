@@ -138,3 +138,5 @@ alias pp="git push"
 alias st="git status"
 alias ph="sxiv $@"
 alias vec="inkview $@"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
