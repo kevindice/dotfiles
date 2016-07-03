@@ -90,5 +90,4 @@ source ~/.ssh-aliases
 alias tk="take"
 alias dot="find ~/.* -maxdepth 0 | less"
 
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
