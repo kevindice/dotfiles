@@ -88,7 +88,7 @@ prompt_context() {
     elif [[ "$ZSH_HOST" == "viper" ]]; then
       prompt_segment green black "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "ubuntu" ]]; then
-      prompt_segment orange default "%(!.%{%F{yellow}%}.)$USER@%m"
+      prompt_segment 088 white "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "KSUHackathon" ]]; then
       prompt_segment purple white "%(!.%{%F{yellow}%}.)$USER@%m"
     else
