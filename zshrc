@@ -92,3 +92,4 @@ alias dot="find ~/.* -maxdepth 0 | less"
 alias st="git status"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.local/bin"
