@@ -91,6 +91,8 @@ prompt_context() {
       prompt_segment 088 white "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "KSUHackathon" ]]; then
       prompt_segment 054 white "%(!.%{%F{yellow}%}.)$USER@%m"
+    elif [[ "$ZSH_HOST" == "skydivekstate" ]]; then
+      prompt_segment 154 black "%(!.%{%F{yellow}%}.)$USER@%m"
     else
       prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
     fi
