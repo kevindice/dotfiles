@@ -1,2 +1,5 @@
-alias hks="ssh 104.131.170.248"
-
+alias hks="ssh kevin@hack.k-state.io"
+alias sks="ssh kevin@skydivekstate.com"
+alias viper="ssh kmdice@viper.cs.ksu.edu"
+alias cougar="ssh kmdice@cougar.cs.ksu.edu"
+alias beo="ssh kmdice@beocat.cs.ksu.edu"
