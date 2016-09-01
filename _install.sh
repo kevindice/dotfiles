@@ -9,6 +9,7 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files=`ls ~/dotfiles -a | grep -v "^\." | grep -v "^_"`
+config_directory_files=``
 
 ##########
 
@@ -38,6 +39,9 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+
+# move any existing configuration files from ~/.config to dotfiles_old directory, then create symlinks
 
 
 
