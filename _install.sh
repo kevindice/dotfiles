@@ -85,3 +85,6 @@ if command -v fc-cache @>/dev/null ; then
     echo "Resetting font cache, this may take a moment..."
     fc-cache -f $font_dir
 fi
+
+# Install local utilities
+pip install --user virtualenvwrapper
