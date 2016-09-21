@@ -59,6 +59,7 @@ sublime tugboat urltools web-search wd)
 # export MANPATH="/usr/local/man:$MANPATH"
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
 source ~/.local/bin/virtualenvwrapper_lazy.sh
 
 source $ZSH/oh-my-zsh.sh
