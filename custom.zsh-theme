@@ -89,7 +89,7 @@ prompt_context() {
       prompt_segment green black "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "ubuntu" ]]; then
       prompt_segment 088 white "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" == "k-state.io" ]]; then
+    elif [[ "$ZSH_HOST" == "hackkstate" ]]; then
       prompt_segment 054 white "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "skydivekstate" ]]; then
       prompt_segment 154 black "%(!.%{%F{yellow}%}.)$USER@%m"
