@@ -26,9 +26,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-wget https://i.redd.it/5bznn9h4426x.jpg -O ~/dotfiles/.images/background.jpg --quiet
+wget http://static.simpledesktops.com/uploads/desktops/2015/09/05/sunset.png -O ~/dotfiles/.images/background.jpg --quiet
 
-nitrogen --set-scaled ~/dotfiles/.images/background.jpg || display -window root ~/Pictures/retro_grunge_wall_wavy_background_18551_1920x1200.jpg
+nitrogen --set-scaled ~/dotfiles/.images/background.jpg || display -window root ~/dotfiles/.images/background.jpg
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
