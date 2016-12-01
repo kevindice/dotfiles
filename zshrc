@@ -55,12 +55,21 @@ sublime tugboat urltools web-search wd)
 
 # User configuration
 
+# Python Virtual Environments and Virtual Env Wrapper
+
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
-source ~/.local/bin/virtualenvwrapper_lazy.sh
+
+if id -nG "$USER" | grep -qw "sudo"; then
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
+else
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+    source ~/.local/bin/virtualenvwrapper_lazy.sh
+fi
+
 
 source $ZSH/oh-my-zsh.sh
 

@@ -48,10 +48,6 @@ done
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
-    # Clone my oh-my-zsh repository from GitHub only if it isn't already present
-    if [[ ! -d $dir/oh-my-zsh/ ]]; then
-        git clone http://github.com/robbyrussell/oh-my-zsh.git
-    fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
         chsh -s $(which zsh)
@@ -61,13 +57,15 @@ else
     platform=$(uname);
     # If the platform is Linux, try an apt-get to install zsh and then recurse
     if [[ $platform == 'Linux' ]]; then
-        if [[ -f /etc/redhat-release ]]; then
-            sudo yum install zsh
-            install_zsh
-        fi
-        if [[ -f /etc/debian_version ]]; then
-            sudo apt-get install zsh
-            install_zsh
+
+        # Only attempt to install if we are a sudoer
+        if id -nG "$USER" | grep -qw "sudo"; then
+            if [[ -f /etc/redhat-release ]]; then
+                sudo yum install zsh
+            fi
+            if [[ -f /etc/debian_version ]]; then
+                sudo apt-get install zsh
+            fi
         fi
     # If the platform is OS X, tell the user to install zsh :)
     elif [[ $platform == 'Darwin' ]]; then
@@ -77,8 +75,15 @@ else
 fi
 }
 
-install_zsh
+install_oh_my_zsh () {
+    # Clone my oh-my-zsh repository from GitHub only if it isn't already present
+    if [[ ! -d $dir/oh-my-zsh/ ]]; then
+        git clone http://github.com/robbyrussell/oh-my-zsh.git $dir/oh-my-zsh
+    fi
+}
 
+install_zsh
+install_oh_my_zsh
 
 # Reset font cache on Linux
 if command -v fc-cache @>/dev/null ; then
@@ -87,4 +92,4 @@ if command -v fc-cache @>/dev/null ; then
 fi
 
 # Install local utilities
-pip install --user virtualenvwrapper
+pip3 install --user virtualenvwrapper
