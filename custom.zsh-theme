@@ -97,6 +97,8 @@ prompt_context() {
       prompt_segment 028 white "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "34a033547d93babd0d1125662b164ffe  -" ]]; then
       prompt_segment 246 white "%(!.%{%F{yellow}%}.)$USER@%m"
+    elif [[ "$ZSH_HOST" == "debf20ffa1c65079f4dd3960fc0c44e3  -" ]]; then
+      prompt_segment 226 black "%(!.%{%F{yellow}%}.)$USER@%m"
     else
       prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
     fi
