@@ -92,4 +92,8 @@ if command -v fc-cache @>/dev/null ; then
 fi
 
 # Install local utilities
-pip3 install --user virtualenvwrapper
+if id -nG "$USER" | grep -qw "sudo"; then
+    sudo pip3 install virtualenv virtualenvwrapper
+else
+    pip3 install --user virtualenv virtualenvwrapper
+fi
