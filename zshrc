@@ -104,9 +104,31 @@ alias tk="take"
 alias dot="find ~/.* -maxdepth 0 | less"
 alias st="git status"
 alias se="cd /etc/nginx/sites-enabled/"
+alias gstrip="sed 1d | sed 's/\s.*$//'"
+
+googledrivels() {
+    gdrive list --query "'$1' in parents" -m 1000 | tee ls.txt
+    wc -l ls.txt
+    cat ls.txt | gstrip > index.txt
+}
+
+gdlistdownload() {
+    cat index.txt | while read line
+    do
+        echo "Attempting: $line"
+        gdrive download $line
+        cat index.txt | sed 1d > tmp.txt
+        cat tmp.txt > index.txt
+    done
+}
+
+alias gdls=googledrivels
+alias gddl="gdlistdownload | tee log.txt"
+
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
+
 
 # NPM packages in homedir
 NPM_PACKAGES="$HOME/.npm-packages"
