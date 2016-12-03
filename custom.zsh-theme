@@ -81,6 +81,7 @@ prompt_end() {
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 # Context: user@hostname (who am I and where am I)
+# Color Reference:  http://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     if [[ "`echo "$ZSH_HOST" | md5sum`" == "b9aec51f0f5a32cc5d26da4f9e8a214f  -" ]]; then
@@ -96,9 +97,9 @@ prompt_context() {
     elif [[ "`echo "$ZSH_HOST" | md5sum`" == "526060150ae01ea924599203d60f2694  -" ]]; then
       prompt_segment 028 white "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "`echo "$ZSH_HOST" | md5sum`" == "34a033547d93babd0d1125662b164ffe  -" ]]; then
-      prompt_segment 246 white "%(!.%{%F{yellow}%}.)$USER@%m"
+      prompt_segment 246 238 "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "`echo "$ZSH_HOST" | md5sum`" == "debf20ffa1c65079f4dd3960fc0c44e3  -" ]]; then
-      prompt_segment 226 black "%(!.%{%F{yellow}%}.)$USER@%m"
+      prompt_segment 226 240 "%(!.%{%F{yellow}%}.)$USER@%m"
     else
       prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
     fi
