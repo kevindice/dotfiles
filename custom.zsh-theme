@@ -85,16 +85,18 @@ prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     if [[ "`echo "$ZSH_HOST" | md5sum`" == "b9aec51f0f5a32cc5d26da4f9e8a214f  -" ]]; then
       prompt_segment yellow black "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" == "viper" ]]; then
+    elif [[ "$ZSH_HOST" == "74f574e646b091accb92b16123be211d  -" ]]; then
       prompt_segment green black "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "ubuntu" ]]; then
       prompt_segment 088 white "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" == "hackkstate" ]]; then
+    elif [[ "$ZSH_HOST" == "e50569047556120d9485f0378d02a100  -" ]]; then
       prompt_segment 054 white "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" == "skydivekstate" ]]; then
+    elif [[ "$ZSH_HOST" == "b2ee672dd86391060fb0c6e6dfb1896c  -" ]]; then
       prompt_segment 154 black "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" == "ofpl.info" ]]; then
+    elif [[ "$ZSH_HOST" == "526060150ae01ea924599203d60f2694  -" ]]; then
       prompt_segment 028 white "%(!.%{%F{yellow}%}.)$USER@%m"
+    elif [[ "$ZSH_HOST" == "34a033547d93babd0d1125662b164ffe  -" ]]; then
+      prompt_segment 246 white "%(!.%{%F{yellow}%}.)$USER@%m"
     else
       prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
     fi
