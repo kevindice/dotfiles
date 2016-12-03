@@ -85,19 +85,19 @@ prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     if [[ "`echo "$ZSH_HOST" | md5sum`" == "b9aec51f0f5a32cc5d26da4f9e8a214f  -" ]]; then
       prompt_segment yellow black "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" | md5sum == "74f574e646b091accb92b16123be211d  -" ]]; then
+    elif [[ "`echo "$ZSH_HOST" | md5sum`" == "74f574e646b091accb92b16123be211d  -" ]]; then
       prompt_segment green black "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" | md5sum == "ubuntu" ]]; then
+    elif [[ "`echo "$ZSH_HOST" | md5sum`" | md5sum == "ubuntu" ]]; then
       prompt_segment 088 white "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" | md5sum == "e50569047556120d9485f0378d02a100  -" ]]; then
+    elif [[ "`echo "$ZSH_HOST" | md5sum`" | md5sum == "e50569047556120d9485f0378d02a100  -" ]]; then
       prompt_segment 054 white "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" | md5sum == "b2ee672dd86391060fb0c6e6dfb1896c  -" ]]; then
+    elif [[ "`echo "$ZSH_HOST" | md5sum`" | md5sum == "b2ee672dd86391060fb0c6e6dfb1896c  -" ]]; then
       prompt_segment 154 black "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" | md5sum == "526060150ae01ea924599203d60f2694  -" ]]; then
+    elif [[ "`echo "$ZSH_HOST" | md5sum`" | md5sum == "526060150ae01ea924599203d60f2694  -" ]]; then
       prompt_segment 028 white "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" | md5sum == "34a033547d93babd0d1125662b164ffe  -" ]]; then
+    elif [[ "`echo "$ZSH_HOST" | md5sum`" | md5sum == "34a033547d93babd0d1125662b164ffe  -" ]]; then
       prompt_segment 246 white "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "$ZSH_HOST" | md5sum == "debf20ffa1c65079f4dd3960fc0c44e3  -" ]]; then
+    elif [[ "`echo "$ZSH_HOST" | md5sum`" | md5sum == "debf20ffa1c65079f4dd3960fc0c44e3  -" ]]; then
       prompt_segment 226 black "%(!.%{%F{yellow}%}.)$USER@%m"
     else
       prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
