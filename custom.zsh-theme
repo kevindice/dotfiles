@@ -83,7 +83,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    if [[ "$ZSH_HOST" == "cougar" ]]; then
+    if [[ "`echo "$ZSH_HOST" | md5sum`" == "b9aec51f0f5a32cc5d26da4f9e8a214f  -" ]]; then
       prompt_segment yellow black "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "$ZSH_HOST" == "viper" ]]; then
       prompt_segment green black "%(!.%{%F{yellow}%}.)$USER@%m"
