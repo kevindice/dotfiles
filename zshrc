@@ -105,6 +105,7 @@ alias dot="find ~/.* -maxdepth 0 | less"
 alias st="git status"
 alias se="cd /etc/nginx/sites-enabled/"
 alias gstrip="sed 1d | sed 's/\s.*$//'"
+alias sl="ls"
 
 googledrivels() {
     gdrive list --query "'$1' in parents" -m 1000 | tee ls.txt
