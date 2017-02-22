@@ -142,3 +142,5 @@ MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 # Tell Node about these packages
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+git -q -C ~/dotfiles pull -q
