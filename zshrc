@@ -123,9 +123,15 @@ gdlistdownload() {
     done
 }
 
+lockstuff() {
+    scrot /tmp/screenshot123.png
+    convert /tmp/screenshot123.png -blur 0x5 /tmp/screenshotblur123.png
+    i3lock -i /tmp/screenshotblur123.png
+}
+
 alias gdls=googledrivels
 alias gddl="gdlistdownload | tee log.txt"
-
+alias k=lockstuff
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
