@@ -45,7 +45,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-#bindsym $mod+l focus up
+bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -122,6 +122,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+p exec "scrot /tmp/screenshot123.png; convert /tmp/screenshot123.png -blur 0x15 /tmp/screenshotblur123.png; i3lock -i /tmp/screenshotblur123.png"
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -155,4 +157,3 @@ bar {
         status_command i3status
 }
 
-bindsym $mod+l exec lockstuff
