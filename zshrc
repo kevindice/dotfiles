@@ -132,6 +132,7 @@ lockstuff() {
 alias gdls=googledrivels
 alias gddl="gdlistdownload | tee log.txt"
 alias k=lockstuff
+alias nano=vim
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
