@@ -26,10 +26,14 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-wget http://static.simpledesktops.com/uploads/desktops/2015/09/05/sunset.png -O ~/dotfiles/.images/background.jpg --quiet
+wget "https://images.pexels.com/photos/207529/pexels-photo-207529.jpeg?w=1920&h=1200&auto=compress&cs=tinysrgb" -O ~/dotfiles/.images/background.jpg --quiet
 
-nitrogen --set-scaled ~/dotfiles/.images/background.jpg || display -window root ~/dotfiles/.images/background.jpg
-
+if hash nitrogen 2>/dev/null
+then
+  nitrogen --set-scaled ~/dotfiles/.images/background.jpg
+else
+  display -window root ~/dotfiles/.images/background.jpg
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
