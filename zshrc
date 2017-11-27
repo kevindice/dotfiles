@@ -129,10 +129,20 @@ lockstuff() {
     i3lock -i /tmp/screenshotblur123.png
 }
 
+monitorsAllFour() {
+    # Set up monitors for school setup
+    xrandr --output DP-0.1 --rotate left
+    xrandr --output DP-2.1 --rotate left  
+    xrandr --output DP-0.1 --right-of DP-0.8
+    xrandr --output DP-2.1 --right-of DP-0.1
+    xrandr --output DP-2.8 --right-of DP-2.1
+}
+
 alias gdls=googledrivels
 alias gddl="gdlistdownload | tee log.txt"
 alias k=lockstuff
 alias py=python
+alias mon4=monitorsAllFour
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
@@ -151,3 +161,4 @@ MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 export LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kmdice/gsl/lib/

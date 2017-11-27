@@ -140,3 +140,4 @@ alias ph="sxiv $@"
 alias vec="inkview $@"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kmdice/gsl/lib/
