@@ -98,9 +98,9 @@ prompt_context() {
       prompt_segment 028 white "%(!.%{%F{yellow}%}.)$USER@%m"
     elif [[ "`echo "$ZSH_HOST" | md5sum`" == "34a033547d93babd0d1125662b164ffe  -" ]]; then
       prompt_segment 246 238 "%(!.%{%F{yellow}%}.)$USER@%m"
-    elif [[ "`echo "$ZSH_HOST" | md5sum`" == "debf20ffa1c65079f4dd3960fc0c44e3  -" ]]; then
-      prompt_segment 226 240 "%(!.%{%F{yellow}%}.)$USER@%m"
-    else
+		elif [[ "`echo "$ZSH_HOST" | md5sum`" == "cc9c000cf55ee539b71bb3b3ba59976b  -" ]]; then
+			prompt_segment 233 214 "%(!.%{%F{yellow}%}.)$USER@%m"
+		else
       prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
     fi
   fi
@@ -121,9 +121,9 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_segment 225 black
     else
-      prompt_segment green black
+      prompt_segment 255 black
     fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
@@ -140,8 +140,8 @@ prompt_git() {
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '●'
+    zstyle ':vcs_info:*' stagedstr '✌'
+    zstyle ':vcs_info:*' unstagedstr '☣'
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
@@ -186,7 +186,12 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black '%~'
+	if [[ "`echo "$ZSH_HOST" | md5sum`" == "cc9c000cf55ee539b71bb3b3ba59976b  -" ]]; then
+		prompt_segment 208 black '%~'
+  else
+		prompt_segemnt blue black '%~'
+	fi
+
 }
 
 # Virtualenv: current working virtualenv
