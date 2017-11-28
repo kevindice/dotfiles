@@ -189,7 +189,7 @@ prompt_dir() {
 	if [[ "`echo "$ZSH_HOST" | md5sum`" == "cc9c000cf55ee539b71bb3b3ba59976b  -" ]]; then
 		prompt_segment 208 black '%~'
   else
-		prompt_segemnt blue black '%~'
+		prompt_segment blue black '%~'
 	fi
 
 }
