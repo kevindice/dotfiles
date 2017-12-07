@@ -138,11 +138,18 @@ monitorsAllFour() {
     xrandr --output DP-2.8 --right-of DP-2.1
 }
 
+monitorsJustTwo() {
+    # Set up monitors for left 2
+    xrandr --output DP-0.1 --rotate left
+    xrandr --output DP-0.1 --right-of DP-0.8
+}
+
 alias gdls=googledrivels
 alias gddl="gdlistdownload | tee log.txt"
 alias k=lockstuff
 alias py=python
 alias mon4=monitorsAllFour
+alias mon2=monitorsJustTwo
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
