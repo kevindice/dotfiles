@@ -100,6 +100,8 @@ prompt_context() {
       prompt_segment 246 238 "%(!.%{%F{yellow}%}.)$USER@%m"
 		elif [[ "`echo "$ZSH_HOST" | md5sum`" == "cc9c000cf55ee539b71bb3b3ba59976b  -" ]]; then
 			prompt_segment 233 214 "%(!.%{%F{yellow}%}.)$USER@%m"
+		elif [[ "`echo "$ZSH_HOST" | md5sum`" == "4d4ecaea1412e3ce0e9efd539614db1c  -" ]]; then
+			prompt_segment 233 201 "%(!.%{%F{yellow}%}.)$USER@%m"
 		else
       prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
     fi
@@ -188,6 +190,8 @@ prompt_hg() {
 prompt_dir() {
 	if [[ "`echo "$ZSH_HOST" | md5sum`" == "cc9c000cf55ee539b71bb3b3ba59976b  -" ]]; then
 		prompt_segment 208 black '%~'
+	elif [[ "`echo "$ZSH_HOST" | md5sum`" == "4d4ecaea1412e3ce0e9efd539614db1c  -" ]]; then
+		prompt_segment 201 black '%~'
   else
 		prompt_segment blue black '%~'
 	fi
